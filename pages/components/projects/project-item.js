@@ -39,8 +39,6 @@ export default function ProjectItem({ data }) {
         alt="cover image"
         width={1000}
         height={100}
-        layout="responsive"
-        objectFit="cover"
         quality={100}
       />
 
