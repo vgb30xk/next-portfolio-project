@@ -1,25 +1,25 @@
 import Image from "next/image";
 
 export default function ProjectItem({ data }) {
-  const title = data.properties.Name.title[0].plain_text;
-  const github = data.properties.Github.url;
-  const tistory = data.properties.Tistory.url;
-  const description = data.properties.Description.rich_text[0].plain_text;
-  const imgSrc = data.cover.file?.url || data.cover.external.url;
-  const tags = data.properties.Tags.multi_select;
-  const start = data.properties.WorkPeriod.date.start;
-  const end = data.properties.WorkPeriod.date.end;
+  const title = data?.properties.Name.title[0].plain_text;
+  const github = data?.properties.Github.url;
+  const tistory = data?.properties.Tistory.url;
+  const description = data?.properties.Description.rich_text[0].plain_text;
+  const imgSrc = data?.cover.file?.url || data?.cover.external.url;
+  const tags = data?.properties.Tags.multi_select;
+  const start = data?.properties.WorkPeriod.date.start;
+  const end = data?.properties.WorkPeriod.date.end;
 
   const calculatedPeriod = (start, end) => {
     const startDateStringArray = start.split("-");
     const endDateStringArray = end.split("-");
 
-    var startDate = new Date(
+    let startDate = new Date(
       startDateStringArray[0],
       startDateStringArray[1],
       startDateStringArray[2]
     );
-    var endDate = new Date(
+    let endDate = new Date(
       endDateStringArray[0],
       endDateStringArray[1],
       endDateStringArray[2]

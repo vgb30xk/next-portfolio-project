@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useEffect } from "react";
+import Layout from "../components/layout";
+import ProjectItem from "../components/projects/ProjectItem";
 import { DATABASE_ID, TOKEN } from "../config";
-import Layout from "./components/layout";
-import ProjectItem from "./components/projects/project-item";
 
 function Projects({ projects }) {
   return (
